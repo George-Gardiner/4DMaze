@@ -1,15 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvx6liqfnkicw"]
+[gd_scene load_steps=5 format=3 uid="uid://dvx6liqfnkicw"]
 
 [ext_resource type="PackedScene" uid="uid://duewkaos2dibb" path="res://Assets/3DObjects/AmongUs.glb" id="1_j25rt"]
+[ext_resource type="Script" path="res://Assets/Scenes/main_player.gd" id="1_knybx"]
+[ext_resource type="Script" path="res://Assets/Scenes/CameraController.gd" id="3_r2xag"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vnfbf"]
 radius = 0.379243
 height = 1.54199
 
 [node name="MainPlayer" type="CharacterBody3D"]
+script = ExtResource("1_knybx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vnfbf")
 
 [node name="AmongUs" parent="." instance=ExtResource("1_j25rt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.525, 0)
+
+[node name="CameraController" type="Node3D" parent="."]
+script = ExtResource("3_r2xag")
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.954172, 0.299257, 0, -0.299257, 0.954172, 0, 1.78398, 2.80607)
+current = true
