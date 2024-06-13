@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvx6liqfnkicw"]
+[gd_scene load_steps=5 format=3 uid="uid://dvx6liqfnkicw"]
 
 [ext_resource type="PackedScene" uid="uid://duewkaos2dibb" path="res://Assets/3DObjects/AmongUs.glb" id="1_j25rt"]
 [ext_resource type="Script" path="res://Assets/Scenes/main_player.gd" id="1_knybx"]
+[ext_resource type="PackedScene" uid="uid://bobwmsh7f7k1m" path="res://pause_menu.tscn" id="3_ewait"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vnfbf"]
 radius = 0.379243
@@ -20,3 +21,5 @@ shape = SubResource("CapsuleShape3D_vnfbf")
 
 [node name="AmongUs" parent="." instance=ExtResource("1_j25rt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.525, 0)
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_ewait")]

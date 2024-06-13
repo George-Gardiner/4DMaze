@@ -4,6 +4,7 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var turnSpeed = -0.2
+var pauseMenu = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -12,13 +13,22 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	# Lock mouse in center of screen and hide
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pauseMenu = get_node("PauseMenu")
+	pauseMenu.set_visible(false)
 	
 	
+func togglePauseMenu():
+	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode= Input.MOUSE_MODE_CAPTURED
+		pauseMenu.set_visible(false)
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		pauseMenu.set_visible(true)
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(event.get_relative().x*turnSpeed))
 	elif event.is_action_pressed("Menu"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		togglePauseMenu()
 
 
 func _physics_process(delta):
