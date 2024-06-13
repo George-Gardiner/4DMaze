@@ -18,3 +18,7 @@ func _on_return_button_button_down():
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		set_visible(true)
+
+
+func _on_main_menu_button_button_down():
+	get_tree().change_scene_to_file("res://Assets/Scenes/Menus/main_menu.tscn")
