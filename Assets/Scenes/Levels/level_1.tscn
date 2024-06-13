@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://uip3bk1ecvjr"]
+[gd_scene load_steps=7 format=3 uid="uid://uip3bk1ecvjr"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_1pr5e"]
 [ext_resource type="MeshLibrary" uid="uid://bda42ecuxlcfa" path="res://Assets/3DObjects/Blocks.tres" id="2_dk0o5"]
+[ext_resource type="PackedScene" uid="uid://cvwpqtgmk8ohb" path="res://Assets/3DObjects/Portal.glb" id="3_j7y2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
 sky_top_color = Color(0.22, 0.467, 1, 1)
@@ -37,3 +38,5 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vb85d")
+
+[node name="Portal" parent="." instance=ExtResource("3_j7y2o")]
