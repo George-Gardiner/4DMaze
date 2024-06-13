@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgx0tbwy70w08"]
+
+[ext_resource type="PackedScene" uid="uid://cvwpqtgmk8ohb" path="res://Assets/3DObjects/Portal.glb" id="1_g60rk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bia8l"]
+
+[node name="Portal" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_bia8l")
+
+[node name="Portal" parent="." instance=ExtResource("1_g60rk")]
