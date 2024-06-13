@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://uip3bk1ecvjr"]
+[gd_scene load_steps=7 format=3 uid="uid://cnnum24p8apy2"]
 
-[ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_1pr5e"]
-[ext_resource type="MeshLibrary" uid="uid://bda42ecuxlcfa" path="res://Assets/3DObjects/Blocks.tres" id="2_dk0o5"]
-[ext_resource type="PackedScene" uid="uid://cvwpqtgmk8ohb" path="res://Assets/3DObjects/Portal.glb" id="3_j7y2o"]
+[ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
+[ext_resource type="MeshLibrary" uid="uid://bda42ecuxlcfa" path="res://Assets/3DObjects/Blocks.tres" id="2_plu6u"]
+[ext_resource type="PackedScene" uid="uid://cvwpqtgmk8ohb" path="res://Assets/3DObjects/Portal.glb" id="3_q1cml"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
 sky_top_color = Color(0.22, 0.467, 1, 1)
@@ -23,14 +23,14 @@ ssao_enabled = true
 
 [node name="Level1" type="Node3D"]
 
-[node name="MainPlayer" parent="." instance=ExtResource("1_1pr5e")]
+[node name="MainPlayer" parent="." instance=ExtResource("1_sqw44")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25698, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.600057, 0.799957, 0, -0.799957, 0.600057, 0, 0, 0)
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("2_dk0o5")
+mesh_library = ExtResource("2_plu6u")
 data = {
 "cells": PackedInt32Array(-262154, 3, 0, -262153, 3, 0, -262152, 3, 0, -262152, 2, 0, -262153, 2, 0, -262154, 2, 0, -262153, 1, 0, -262152, 1, 0, -262151, 1, 0, -262153, 0, 0, -262154, 0, 0, -262154, 1, 0, -262150, 1, 0, -262150, 2, 0, -262151, 2, 0, -262151, 3, 0, -262150, 3, 0, -262149, 2, 0, -262150, 0, 0, -262151, 0, 0, -262152, 0, 0, -1, 0, 196608, 65532, 1, 196608, 65532, 2, 196608, 65531, 2, 196608, 65531, 1, 196608, 65532, 0, 196608, 65533, 1, 196608, 65533, 0, 196608, 65534, 0, 196608, 65534, 1, 196608, 65534, 2, 196608, 65535, 1, 196608, 65535, 0, 196608, 65535, 3, 196608, 65535, 6, 196608, 65535, 7, 196608, 65535, 5, 196608, 65535, 4, 196608, 0, 2, 196608, 0, 1, 196608, 0, 0, 196608, 65534, 5, 196608, 65534, 6, 196608, 65533, 7, 196608, 65533, 6, 196608, 65533, 3, 196608, 65534, 3, 196608, 65535, 2, 196608, 65534, 7, 196608, 65534, 4, 196608)
 }
@@ -39,5 +39,4 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vb85d")
 
-[node name="Portal" parent="." instance=ExtResource("3_j7y2o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73462, 8.15734)
+[node name="Portal" parent="." instance=ExtResource("3_q1cml")]
