@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cvwpqtgmk8ohb" path="res://Assets/3DObjects/Portal.glb" id="1_g60rk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bia8l"]
+size = Vector3(0.5, 2, 2)
 
 [node name="Portal" type="Area3D"]
 
@@ -10,3 +11,4 @@
 shape = SubResource("BoxShape3D_bia8l")
 
 [node name="Portal" parent="." instance=ExtResource("1_g60rk")]
+transform = Transform3D(1, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
