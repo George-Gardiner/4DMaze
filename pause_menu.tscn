@@ -1,8 +1,6 @@
-[gd_scene format=3 uid="uid://dwyjcln6jrs3w"]
+[gd_scene format=3 uid="uid://bobwmsh7f7k1m"]
 
-[node name="PauseMenu" type="CanvasLayer"]
-
-[node name="Control" type="Control" parent="."]
+[node name="PauseMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +8,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,36 +20,36 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 80
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="MainLabel" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="MainLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 46
 text = "Pause Menu"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 64
 
-[node name="ReturnButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Return To Game"
 
-[node name="MainMenuButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Quit To Main Menu"
 
-[node name="VerticalInvert" type="CheckButton" parent="Control/MarginContainer/VBoxContainer"]
+[node name="VerticalInvert" type="CheckButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Vertical Input Toggle
 "
 
-[node name="HorizontalInvert" type="CheckButton" parent="Control/MarginContainer/VBoxContainer"]
+[node name="HorizontalInvert" type="CheckButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Horizontal Input Toggle
 "
