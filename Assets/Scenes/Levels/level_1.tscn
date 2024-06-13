@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://uip3bk1ecvjr"]
+[gd_scene load_steps=8 format=3 uid="uid://uip3bk1ecvjr"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_1pr5e"]
+[ext_resource type="Script" path="res://Assets/Scenes/Levels/level_1.gd" id="1_7t8ax"]
 [ext_resource type="MeshLibrary" uid="uid://bda42ecuxlcfa" path="res://Assets/3DObjects/Blocks.tres" id="2_dk0o5"]
-[ext_resource type="PackedScene" uid="uid://cvwpqtgmk8ohb" path="res://Assets/3DObjects/Portal.glb" id="3_j7y2o"]
+[ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_h6jlc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
 sky_top_color = Color(0.22, 0.467, 1, 1)
@@ -22,6 +23,7 @@ ssr_enabled = true
 ssao_enabled = true
 
 [node name="Level1" type="Node3D"]
+script = ExtResource("1_7t8ax")
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_1pr5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25698, 0)
@@ -39,5 +41,5 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vb85d")
 
-[node name="Portal" parent="." instance=ExtResource("3_j7y2o")]
+[node name="Portal2" parent="." instance=ExtResource("4_h6jlc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73462, 8.15734)

@@ -1,20 +1,13 @@
-extends Area3D
+extends Node3D
 
-var active = false
-var exit
-var location
-
+@onready var portals = [get_node("Portal2")]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	portals[0].exit = "res://Assets/Scenes/Levels/level_2.tscn"
+	portals[0].active = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_body_entered(body):
-	if active:
-		get_tree().change_scene_to_file(exit)
