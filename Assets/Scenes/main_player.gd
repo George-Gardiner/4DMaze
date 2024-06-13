@@ -24,6 +24,8 @@ func togglePauseMenu():
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		pauseMenu.set_visible(true)
+
+
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(event.get_relative().x*turnSpeed))
