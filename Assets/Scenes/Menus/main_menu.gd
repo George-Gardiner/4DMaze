@@ -11,9 +11,9 @@ func _process(delta):
 	pass
 
 
-func _on_start_button_down():
+func _on_start_button_down():  # start game
 	get_tree().change_scene_to_file("res://Assets/Scenes/Levels/level_1.tscn")
 
 
-func _on_quit_button_down():
-	pass # Replace with function body.
+func _on_quit_button_down():  # quite button
+	get_tree().quit()
