@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgx0tbwy70w08"]
 
 [ext_resource type="PackedScene" uid="uid://cvwpqtgmk8ohb" path="res://Assets/3DObjects/Portal.glb" id="1_g60rk"]
-[ext_resource type="Script" path="res://Assets/Scenes/Objects/portal.gd" id="1_l5xjc"]
+[ext_resource type="Script" path="res://Assets/Scenes/Scripts/portal.gd" id="1_o0vlt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bia8l"]
 size = Vector3(0.5, 2, 2)
 
 [node name="Portal" type="Area3D"]
-script = ExtResource("1_l5xjc")
+script = ExtResource("1_o0vlt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_bia8l")

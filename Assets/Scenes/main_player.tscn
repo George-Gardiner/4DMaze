@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvx6liqfnkicw"]
 
+[ext_resource type="Script" path="res://Assets/Scenes/Scripts/main_player.gd" id="1_at7f4"]
 [ext_resource type="PackedScene" uid="uid://duewkaos2dibb" path="res://Assets/3DObjects/AmongUs.glb" id="1_j25rt"]
-[ext_resource type="Script" path="res://Assets/Scenes/main_player.gd" id="1_knybx"]
 [ext_resource type="PackedScene" uid="uid://23365eoul53x" path="res://Assets/Scenes/Menus/pause_menu.tscn" id="3_ewait"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vnfbf"]
@@ -9,7 +9,7 @@ radius = 0.379243
 height = 1.54199
 
 [node name="MainPlayer" type="CharacterBody3D"]
-script = ExtResource("1_knybx")
+script = ExtResource("1_at7f4")
 
 [node name="CameraController" type="Node3D" parent="."]
 
