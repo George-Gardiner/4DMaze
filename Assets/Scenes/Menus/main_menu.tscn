@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmwkhayj5ssge"]
+[gd_scene load_steps=3 format=3 uid="uid://bmwkhayj5ssge"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Menus/main_menu.gd" id="1_ymrbq"]
+[ext_resource type="Theme" uid="uid://yhbsh4ritb6r" path="res://Assets/button_theme.tres" id="2_plecq"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_ymrbq")
@@ -19,3 +20,13 @@ theme_override_constants/separation = 0
 layout_mode = 2
 theme_override_font_sizes/font_size = 61
 text = "4D Maze Game"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_plecq")
+text = "Start"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_plecq")
+text = "Quit"
