@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bmwkhayj5ssge"]
+[gd_scene load_steps=2 format=3 uid="uid://bmwkhayj5ssge"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Menus/main_menu.gd" id="1_ymrbq"]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ymrbq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 theme_override_constants/margin_left = 64
