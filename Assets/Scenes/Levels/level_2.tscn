@@ -21,7 +21,7 @@ sky = SubResource("Sky_llyer")
 ssr_enabled = true
 ssao_enabled = true
 
-[node name="Level1" type="Node3D"]
+[node name="Level2" type="Node3D"]
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_sqw44")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25698, 0)
