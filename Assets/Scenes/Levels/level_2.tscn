@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
-[ext_resource type="PackedScene" uid="uid://cighvmfqky51x" path="res://Assets/3DObjects/BuildingParts/Floor.glb" id="4_iml5n"]
+[ext_resource type="PackedScene" uid="uid://wceu4y341v4t" path="res://Assets/Scenes/Objects/floor_ceiling.tscn" id="4_1oc4p"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
-[ext_resource type="PackedScene" uid="uid://dlnf8rl7vd6jg" path="res://Assets/3DObjects/BuildingParts/Wall.glb" id="5_rymuk"]
+[ext_resource type="PackedScene" uid="uid://cungs5gbhbkw6" path="res://Assets/3DObjects/BuildingParts/Wall.glb" id="5_rymuk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
 sky_top_color = Color(0.22, 0.467, 1, 1)
@@ -47,16 +47,16 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.7023
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_mo0mi")
 
-[node name="Floor1" parent="Floor" instance=ExtResource("4_iml5n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
-
-[node name="Floor2" parent="Floor" instance=ExtResource("4_iml5n")]
+[node name="FloorCeiling1" parent="Floor" instance=ExtResource("4_1oc4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
-[node name="Floor3" parent="Floor" instance=ExtResource("4_iml5n")]
+[node name="FloorCeiling2" parent="Floor" instance=ExtResource("4_1oc4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 
-[node name="Floor4" parent="Floor" instance=ExtResource("4_iml5n")]
+[node name="FloorCeiling3" parent="Floor" instance=ExtResource("4_1oc4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="FloorCeiling4" parent="Floor" instance=ExtResource("4_1oc4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 
 [node name="Walls" type="Node3D" parent="."]
