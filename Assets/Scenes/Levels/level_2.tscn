@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnnum24p8apy2"]
+[gd_scene load_steps=10 format=3 uid="uid://cnnum24p8apy2"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
 [ext_resource type="PackedScene" uid="uid://cighvmfqky51x" path="res://Assets/3DObjects/BuildingParts/Floor.glb" id="4_iml5n"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
+[ext_resource type="PackedScene" uid="uid://dlnf8rl7vd6jg" path="res://Assets/3DObjects/BuildingParts/Wall.glb" id="5_rymuk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
 sky_top_color = Color(0.22, 0.467, 1, 1)
@@ -29,7 +30,7 @@ size = Vector3(100, 1, 100)
 script = ExtResource("1_wxrx7")
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_sqw44")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.63636, 1.116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44563, 1.63636, 1.116)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.600057, 0.799957, 0, -0.799957, 0.600057, 0, 0, 0)
@@ -38,22 +39,54 @@ transform = Transform3D(1, 0, 0, 0, 0.600057, 0.799957, 0, -0.799957, 0.600057, 
 environment = SubResource("Environment_vb85d")
 
 [node name="Portal1" parent="." instance=ExtResource("4_ymu2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99233, 1.60355, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.70236, 1.60355, 2.23817)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_mo0mi")
 
-[node name="Floor1" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+[node name="Floor1" parent="Floor" instance=ExtResource("4_iml5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
 
-[node name="Floor2" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+[node name="Floor2" parent="Floor" instance=ExtResource("4_iml5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
-[node name="Floor3" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+[node name="Floor3" parent="Floor" instance=ExtResource("4_iml5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 
-[node name="Floor4" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+[node name="Floor4" parent="Floor" instance=ExtResource("4_iml5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Wall2" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Wall1" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, -2)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, -2)
+
+[node name="Wall5" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 2)
+
+[node name="Wall6" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 2)
+
+[node name="Wall7" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2, 0, -2)
+
+[node name="Wall8" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2, 0, 2)
+
+[node name="Wall9" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Wall10" parent="Walls" instance=ExtResource("5_rymuk")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 2)
