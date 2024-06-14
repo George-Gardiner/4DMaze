@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://wceu4y341v4t"]
+
+[ext_resource type="PackedScene" uid="uid://cighvmfqky51x" path="res://Assets/3DObjects/BuildingParts/Floor.glb" id="1_jgmx6"]
+[ext_resource type="PackedScene" uid="uid://dvh5myfxibvv7" path="res://Assets/3DObjects/BuildingParts/Ceiling.glb" id="2_2djef"]
+
+[node name="FloorCeiling" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_jgmx6")]
+
+[node name="Ceiling" parent="." instance=ExtResource("2_2djef")]
