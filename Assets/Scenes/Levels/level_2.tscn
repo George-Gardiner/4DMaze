@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnnum24p8apy2"]
+[gd_scene load_steps=9 format=3 uid="uid://cnnum24p8apy2"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
-[ext_resource type="PackedScene" uid="uid://wceu4y341v4t" path="res://Assets/Scenes/Objects/floor_ceiling.tscn" id="4_1oc4p"]
+[ext_resource type="PackedScene" uid="uid://84l6omleoqvd" path="res://Assets/Scenes/Objects/floor_ceiling.tscn" id="4_1oc4p"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
 [ext_resource type="PackedScene" uid="uid://dxg1ssbr0kf13" path="res://Assets/Scenes/Objects/wall.tscn" id="5_uieq2"]
 
@@ -23,9 +23,6 @@ sky = SubResource("Sky_llyer")
 ssr_enabled = true
 ssao_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mo0mi"]
-size = Vector3(100, 1, 100)
-
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_wxrx7")
 
@@ -41,22 +38,18 @@ environment = SubResource("Environment_vb85d")
 [node name="Portal1" parent="." instance=ExtResource("4_ymu2r")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.70236, 1.60355, 2.23817)
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="FloorCeiling" type="Node3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_mo0mi")
-
-[node name="FloorCeiling1" parent="Floor" instance=ExtResource("4_1oc4p")]
+[node name="FloorCeiling1" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
-[node name="FloorCeiling2" parent="Floor" instance=ExtResource("4_1oc4p")]
+[node name="FloorCeiling2" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 
-[node name="FloorCeiling3" parent="Floor" instance=ExtResource("4_1oc4p")]
+[node name="FloorCeiling3" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
 
-[node name="FloorCeiling4" parent="Floor" instance=ExtResource("4_1oc4p")]
+[node name="FloorCeiling4" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 
 [node name="Walls" type="Node3D" parent="."]
