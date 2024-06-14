@@ -22,7 +22,7 @@ sky = SubResource("Sky_llyer")
 ssr_enabled = true
 ssao_enabled = true
 
-[node name="Level1" type="Node3D"]
+[node name="Level1" type="Node3D" groups=["Save"]]
 script = ExtResource("1_5esy7")
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_1pr5e")]

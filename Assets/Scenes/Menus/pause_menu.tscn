@@ -44,6 +44,11 @@ layout_mode = 2
 theme = ExtResource("2_a4es5")
 text = "Return To Game"
 
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_a4es5")
+text = "Save Game"
+
 [node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_a4es5")
