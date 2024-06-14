@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnnum24p8apy2"]
+[gd_scene load_steps=9 format=3 uid="uid://cnnum24p8apy2"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
-[ext_resource type="MeshLibrary" uid="uid://bda42ecuxlcfa" path="res://Assets/3DObjects/Blocks.tres" id="2_plu6u"]
+[ext_resource type="PackedScene" uid="uid://c6pg4hg106t1t" path="res://Assets/3DObjects/BuildingParts/Floor.glb" id="4_iml5n"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
@@ -22,6 +22,9 @@ sky = SubResource("Sky_llyer")
 ssr_enabled = true
 ssao_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mo0mi"]
+size = Vector3(100, 1, 100)
+
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_wxrx7")
 
@@ -31,15 +34,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.25698, 4)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.600057, 0.799957, 0, -0.799957, 0.600057, 0, 0, 0)
 
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("2_plu6u")
-data = {
-"cells": PackedInt32Array(-262154, 3, 0, -262153, 3, 0, -262152, 3, 0, -262152, 2, 0, -262153, 2, 0, -262154, 2, 0, -262153, 1, 0, -262152, 1, 0, -262151, 1, 0, -262153, 0, 0, -262154, 0, 0, -262154, 1, 0, -262150, 1, 0, -262150, 2, 0, -262151, 2, 0, -262151, 3, 0, -262150, 3, 0, -262149, 2, 0, -262150, 0, 0, -262151, 0, 0, -262152, 0, 0, -1, 0, 196608, 65532, 1, 1179648, 65532, 2, 1179648, 65531, 2, 1179648, 65531, 1, 1179648, 65532, 0, 0, 65533, 1, 0, 65533, 0, 0, 65534, 0, 0, 65534, 1, 0, 65534, 2, 0, 65535, 1, 0, 65535, 0, 0, 65535, 3, 1179648, 65535, 6, 1179648, 65535, 7, 1179648, 65535, 5, 1179648, 65535, 4, 1179648, 0, 0, 0, 65534, 5, 1179648, 65534, 6, 1179648, 65533, 7, 1179648, 65533, 6, 1179648, 65533, 3, 1179648, 65534, 3, 1179648, 65535, 2, 1179648, 65534, 7, 1179648, 65534, 4, 1179648, 0, 65535, 0, 0, 1, 1310722, 0, 2, 1310722, 0, 3, 1179648, 65533, 4, 1179648, 65533, 2, 1179648, 65531, 3, 1179648, 65532, 3, 1179648, 65532, 4, 1179648, 65532, 5, 1179648, 65533, 5, 1179648, 0, 5, 1179648, 2, 1, 1507330)
-}
-metadata/_editor_floor_ = Vector3(0, 1, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vb85d")
 
 [node name="Portal1" parent="." instance=ExtResource("4_ymu2r")]
-transform = Transform3D(-0.660801, 0, -0.750561, 0, 1, 0, 0.750561, 0, -0.660801, -4.81186, 2.33169, 8.65681)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99233, 0.948066, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_mo0mi")
+
+[node name="Floor1" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Floor2" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="Floor3" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Floor4" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
