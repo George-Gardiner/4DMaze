@@ -1,7 +1,7 @@
-[gd_resource type="MeshLibrary" load_steps=20 format=3 uid="uid://llyyle7cgrv0"]
+[gd_resource type="MeshLibrary" load_steps=20 format=3 uid="uid://c3avjvl5qica7"]
 
-[ext_resource type="Texture2D" uid="uid://byi7vyo2vdetl" path="res://Assets/3DObjects/TileMap_Floor.png" id="1_1t8b6"]
-[ext_resource type="Texture2D" uid="uid://b3nq5o3dgl1te" path="res://Assets/3DObjects/TileMap_Wall.png" id="2_kcaey"]
+[ext_resource type="Texture2D" path="res://Assets/3DObjects/TileMap_Floor.png" id="1_1t8b6"]
+[ext_resource type="Texture2D" path="res://Assets/3DObjects/TileMap_Wall.png" id="2_kcaey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to5ap"]
 resource_name = "Floor"
