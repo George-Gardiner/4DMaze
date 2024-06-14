@@ -42,3 +42,4 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 environment = SubResource("Environment_vb85d")
 
 [node name="Portal1" parent="." instance=ExtResource("4_ymu2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5329, 1.28161)
