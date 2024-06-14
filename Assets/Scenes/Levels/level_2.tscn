@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
-[ext_resource type="MeshLibrary" uid="uid://btc8a4tfq248m" path="res://Assets/3DObjects/TileMap.tres" id="3_opuwm"]
+[ext_resource type="MeshLibrary" uid="uid://llyyle7cgrv0" path="res://Assets/3DObjects/TileMap.tres" id="3_opuwm"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
