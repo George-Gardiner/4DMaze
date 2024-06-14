@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
-[ext_resource type="PackedScene" uid="uid://c6pg4hg106t1t" path="res://Assets/3DObjects/BuildingParts/Floor.glb" id="4_iml5n"]
+[ext_resource type="PackedScene" uid="uid://cighvmfqky51x" path="res://Assets/3DObjects/BuildingParts/Floor.glb" id="4_iml5n"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
@@ -47,13 +47,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_mo0mi")
 
 [node name="Floor1" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
 
 [node name="Floor2" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
 [node name="Floor3" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 
 [node name="Floor4" parent="StaticBody3D" instance=ExtResource("4_iml5n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
