@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddwd2gpupsv1a"
-path.s3tc="res://.godot/imported/TileMap_Floor_1.png-54de1613629f0db65f6b6e34f57f0d42.s3tc.ctex"
+uid="uid://cmdjwixwv6oyu"
+path.s3tc="res://.godot/imported/TileMap_Wall_2.png-9fa4275aa5b0ba5b9784441809756918.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cf9b60e644e6cc5aca18bfcdbc77a489"
+"md5": "b5cfa9d6c8febd618f91ac2843d50a1c"
 }
 
 [deps]
 
-source_file="res://Assets/3DObjects/TileMap_Floor_1.png"
-dest_files=["res://.godot/imported/TileMap_Floor_1.png-54de1613629f0db65f6b6e34f57f0d42.s3tc.ctex"]
+source_file="res://Assets/3DObjects/TileMap_Wall_2.png"
+dest_files=["res://.godot/imported/TileMap_Wall_2.png-9fa4275aa5b0ba5b9784441809756918.s3tc.ctex"]
 
 [params]
 

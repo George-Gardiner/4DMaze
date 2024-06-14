@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvgn2go1tpno1"
+uid="uid://7lv2aaxeql7d"
 path.s3tc="res://.godot/imported/TileMap_Floor.png-3a57fb3029a5ccf4810b9fe08672a6ea.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b5cfa9d6c8febd618f91ac2843d50a1c"
+"md5": "cf9b60e644e6cc5aca18bfcdbc77a489"
 }
 
 [deps]
