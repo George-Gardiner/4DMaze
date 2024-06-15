@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_1pr5e"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_1.gd" id="1_5esy7"]
-[ext_resource type="PackedScene" uid="uid://84l6omleoqvd" path="res://Assets/Scenes/Objects/floor_ceiling.tscn" id="4_5x346"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_h6jlc"]
+[ext_resource type="MeshLibrary" uid="uid://rynwpbym8ymg" path="res://Assets/Scenes/Objects/FloorCeilingTileMap.tres" id="5_3q5t6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
 sky_top_color = Color(0.22, 0.467, 1, 1)
@@ -37,4 +37,10 @@ environment = SubResource("Environment_vb85d")
 [node name="Portal1" parent="." instance=ExtResource("4_h6jlc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="FloorCeiling" parent="." instance=ExtResource("4_5x346")]
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh_library = ExtResource("5_3q5t6")
+data = {
+"cells": PackedInt32Array(0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 65532, 0, 65534, 65533, 0, 65534, 65535, 0, 65534, 65530, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)

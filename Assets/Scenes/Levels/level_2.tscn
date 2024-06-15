@@ -27,7 +27,7 @@ ssao_enabled = true
 script = ExtResource("1_wxrx7")
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_sqw44")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.370066, 1.63636, 1.116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35221, 1.63636, 1.116)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.600057, 0.799957, 0, -0.799957, 0.600057, 0, 0, 0)
