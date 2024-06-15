@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
-[ext_resource type="PackedScene" uid="uid://84l6omleoqvd" path="res://Assets/Scenes/Objects/floor_ceiling.tscn" id="4_1oc4p"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
+[ext_resource type="MeshLibrary" uid="uid://rynwpbym8ymg" path="res://Assets/Scenes/Objects/FloorCeilingTileMap.tres" id="5_hawma"]
 [ext_resource type="PackedScene" uid="uid://dxg1ssbr0kf13" path="res://Assets/Scenes/Objects/wall.tscn" id="5_uieq2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
@@ -38,20 +38,6 @@ environment = SubResource("Environment_vb85d")
 [node name="Portal1" parent="." instance=ExtResource("4_ymu2r")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.70236, 1.60355, 2.23817)
 
-[node name="FloorCeiling" type="Node3D" parent="."]
-
-[node name="FloorCeiling1" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
-
-[node name="FloorCeiling2" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
-
-[node name="FloorCeiling3" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
-
-[node name="FloorCeiling4" parent="FloorCeiling" instance=ExtResource("4_1oc4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
-
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="Wall1" parent="Walls" instance=ExtResource("5_uieq2")]
@@ -83,3 +69,11 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 
 
 [node name="Wall10" parent="Walls" instance=ExtResource("5_uieq2")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, -2)
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
+mesh_library = ExtResource("5_hawma")
+data = {
+"cells": PackedInt32Array(1, 1, 655360, 65535, 1, 655360, 65535, 65535, 655360, 1, 65535, 655360, 65535, 0, 655360, 0, 0, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
