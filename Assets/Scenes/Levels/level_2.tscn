@@ -1,27 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnnum24p8apy2"]
+[gd_scene load_steps=6 format=3 uid="uid://cnnum24p8apy2"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_sqw44"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_2.gd" id="1_wxrx7"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_ymu2r"]
 [ext_resource type="MeshLibrary" uid="uid://rynwpbym8ymg" path="res://Assets/Scenes/Objects/FloorCeilingTileMap.tres" id="5_hawma"]
 [ext_resource type="PackedScene" uid="uid://dxg1ssbr0kf13" path="res://Assets/Scenes/Objects/wall.tscn" id="5_uieq2"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_welny"]
-sky_top_color = Color(0.22, 0.467, 1, 1)
-sky_horizon_color = Color(1, 1, 1, 1)
-sky_curve = 0.184672
-ground_bottom_color = Color(0, 1, 0.133333, 1)
-ground_horizon_color = Color(1, 1, 1, 1)
-ground_curve = 0.196983
-
-[sub_resource type="Sky" id="Sky_llyer"]
-sky_material = SubResource("ProceduralSkyMaterial_welny")
-
-[sub_resource type="Environment" id="Environment_vb85d"]
-background_mode = 2
-sky = SubResource("Sky_llyer")
-ssr_enabled = true
-ssao_enabled = true
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_wxrx7")
@@ -31,9 +14,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35221, 1.63636, 1.116)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.600057, 0.799957, 0, -0.799957, 0.600057, 0, 0, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_vb85d")
 
 [node name="Portal1" parent="." instance=ExtResource("4_ymu2r")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.70236, 1.60355, 2.23817)
