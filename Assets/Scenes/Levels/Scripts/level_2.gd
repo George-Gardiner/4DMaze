@@ -6,6 +6,7 @@ extends Node3D
 func _ready():
 	portals[0].exit = "res://Assets/Scenes/Levels/level_1.tscn"
 	portals[0].active = true
+	portals[0].exitLocation = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
