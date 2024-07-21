@@ -32,7 +32,6 @@ func togglePauseMenu():
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(event.get_relative().x*turnSpeedX))
-		print(CameraController.rotation_degrees)
 		if CameraController.rotation_degrees[0] + event.get_relative().y*turnSpeedY >=90:
 			CameraController.rotation_degrees[0] = 90
 		elif CameraController.rotation_degrees[0] + event.get_relative().y*turnSpeedY <=-90:
