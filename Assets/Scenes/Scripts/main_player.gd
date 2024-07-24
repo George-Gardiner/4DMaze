@@ -61,5 +61,11 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	print($CameraController/CameraArea.get_overlapping_bodies())
+	if (len($CameraController/CameraArea.get_overlapping_bodies()) > 1):
+		$CameraController/CameraArea/Camera.position.z = -3
+	else:
+		$CameraController/CameraArea/Camera.position.z = 0
 
 	move_and_slide()
