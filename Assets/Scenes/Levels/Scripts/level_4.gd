@@ -8,7 +8,10 @@ func _ready():
 	# portal setup
 	portals[0].exit = "res://Assets/Scenes/Levels/level_1.tscn"
 	portals[0].active = true
-	portals[0].exitLocation = 1
+	portals[0].exitLocation = 2
+	portals[1].exit = "res://Assets/Scenes/Levels/level_1.tscn"
+	portals[1].active = true
+	portals[1].exitLocation = 1
 	
 	# teleport player
 	var file = FileAccess.open("res://Data/Location.data", FileAccess.READ)
