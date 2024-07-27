@@ -21,4 +21,9 @@ func _on_quit_button_down():  # quite button
 
 
 func _on_load_button_down():
-	pass # Replace with function body.
+	if FileAccess.file_exists("res://Data/Location.data") and FileAccess.file_exists("res://Data/Save.data"):
+		var saveFile = FileAccess.open("res://Data/Save.data", FileAccess.READ)
+		var saveData = saveFile.get_var()
+		saveFile.close()
+		print("res://Assets/Scenes/Levels/"+str(saveData["general"]["level"])+".tscn")
+		get_tree().change_scene_to_file("res://Assets/Scenes/Levels/"+str(saveData["general"]["level"])+".tscn")

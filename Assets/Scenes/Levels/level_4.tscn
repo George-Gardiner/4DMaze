@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxg1ssbr0kf13" path="res://Assets/Scenes/Objects/wall.tscn" id="4_pstj5"]
 [ext_resource type="MeshLibrary" uid="uid://rynwpbym8ymg" path="res://Assets/Scenes/Objects/FloorCeilingTileMap.tres" id="5_k382y"]
 
-[node name="Level4" type="Node3D"]
+[node name="level_4" type="Node3D"]
 script = ExtResource("1_toi35")
 
 [node name="MainPlayer" parent="." instance=ExtResource("2_84134")]

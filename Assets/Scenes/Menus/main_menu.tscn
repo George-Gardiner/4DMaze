@@ -37,10 +37,16 @@ layout_mode = 2
 theme = ExtResource("2_plecq")
 text = "Start"
 
+[node name="Load" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_plecq")
+text = "Load"
+
 [node name="Quit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_plecq")
 text = "Quit"
 
 [connection signal="button_down" from="Control/MarginContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="Control/MarginContainer/VBoxContainer/Load" to="." method="_on_load_button_down"]
 [connection signal="button_down" from="Control/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
