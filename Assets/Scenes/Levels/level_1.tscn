@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://uip3bk1ecvjr"]
+[gd_scene load_steps=7 format=3 uid="uid://uip3bk1ecvjr"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_1pr5e"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_1.gd" id="1_5esy7"]
 [ext_resource type="PackedScene" uid="uid://bgx0tbwy70w08" path="res://Assets/Scenes/Objects/portal.tscn" id="4_h6jlc"]
 [ext_resource type="MeshLibrary" uid="uid://rynwpbym8ymg" path="res://Assets/Scenes/Objects/FloorCeilingTileMap.tres" id="5_3q5t6"]
 [ext_resource type="PackedScene" uid="uid://dxg1ssbr0kf13" path="res://Assets/Scenes/Objects/wall.tscn" id="5_t0olq"]
+[ext_resource type="PackedScene" uid="uid://bns6x0plamn73" path="res://Assets/Scenes/Objects/checkpoint.tscn" id="6_fxwsn"]
 
 [node name="level_1" type="Node3D"]
 script = ExtResource("1_5esy7")
@@ -46,3 +47,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
 [node name="Location1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138809, 1.63541, 0.568331)
+
+[node name="Checkpoint" parent="." instance=ExtResource("6_fxwsn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.78859)
