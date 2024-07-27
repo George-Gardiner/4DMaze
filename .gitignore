@@ -1,2 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
+Data/save.data
+Data/Location.data
