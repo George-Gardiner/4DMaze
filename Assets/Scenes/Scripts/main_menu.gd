@@ -12,7 +12,9 @@ func _process(delta):
 
 
 func _on_start_button_down():  # start game
-	FileAccess.open("res://Data/Location.data", FileAccess.WRITE).close()
+	var file = FileAccess.open("res://Data/Location.data", FileAccess.WRITE)
+	file.store_var(1)
+	file.close()
 	get_tree().change_scene_to_file("res://Assets/Scenes/Levels/level_1.tscn")
 
 
