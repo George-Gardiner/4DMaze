@@ -18,3 +18,7 @@ func _on_start_button_down():  # start game
 
 func _on_quit_button_down():  # quite button
 	get_tree().quit()
+
+
+func _on_load_button_down():
+	pass # Replace with function body.
