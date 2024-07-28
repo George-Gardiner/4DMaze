@@ -12,8 +12,12 @@ func _process(_delta):
 
 
 func save():
-	return {}
+	return {
+		"position": self.position,
+		"rotation": self.rotation
+	}
 
 
 func loadObject(data):
-	pass
+	self.position = data["position"]
+	self.rotation = data["rotation"]

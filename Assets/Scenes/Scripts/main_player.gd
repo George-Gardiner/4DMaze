@@ -68,3 +68,15 @@ func _physics_process(delta):
 		$CameraController/CameraArea/Camera.position.z = 0
 
 	move_and_slide()
+	
+
+func save():
+	return {
+		"position": self.position,
+		"rotation":self.rotation
+	}
+	
+	
+func loadObject(data):
+	self.position = data["position"]
+	self.rotation = data["rotation"]

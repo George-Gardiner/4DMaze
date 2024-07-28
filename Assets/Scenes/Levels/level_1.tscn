@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://uip3bk1ecvjr"]
+[gd_scene load_steps=10 format=3 uid="uid://uip3bk1ecvjr"]
 
 [ext_resource type="PackedScene" uid="uid://dvx6liqfnkicw" path="res://Assets/Scenes/main_player.tscn" id="1_1pr5e"]
 [ext_resource type="Script" path="res://Assets/Scenes/Levels/Scripts/level_1.gd" id="1_5esy7"]
@@ -6,11 +6,16 @@
 [ext_resource type="MeshLibrary" uid="uid://rynwpbym8ymg" path="res://Assets/Scenes/Objects/FloorCeilingTileMap.tres" id="5_3q5t6"]
 [ext_resource type="PackedScene" uid="uid://dxg1ssbr0kf13" path="res://Assets/Scenes/Objects/wall.tscn" id="5_t0olq"]
 [ext_resource type="PackedScene" uid="uid://bns6x0plamn73" path="res://Assets/Scenes/Objects/checkpoint.tscn" id="6_fxwsn"]
+[ext_resource type="Script" path="res://Assets/Scenes/Scripts/SaveLoadBasic.gd" id="7_pq22f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_me8b6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u1rou"]
 
 [node name="level_1" type="Node3D"]
 script = ExtResource("1_5esy7")
 
-[node name="MainPlayer" parent="." instance=ExtResource("1_1pr5e")]
+[node name="MainPlayer" parent="." groups=["saveGroup"] instance=ExtResource("1_1pr5e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.2, -2.86846, -2)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -28,14 +33,11 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="Location1" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 5)
+[node name="Location1" parent="." instance=ExtResource("6_fxwsn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7526, 2.44208, 7.78016)
 
-[node name="Location2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
-
-[node name="Checkpoint" parent="." instance=ExtResource("6_fxwsn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.78859)
+[node name="Location2" parent="." instance=ExtResource("6_fxwsn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93832, 1.13212, 1.85053)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -458,3 +460,13 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0,
 
 [node name="Wall140" parent="Walls" instance=ExtResource("5_t0olq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 16)
+
+[node name="Cube" type="RigidBody3D" parent="." groups=["saveGroup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8342, 0)
+script = ExtResource("7_pq22f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube"]
+shape = SubResource("BoxShape3D_me8b6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
+mesh = SubResource("BoxMesh_u1rou")

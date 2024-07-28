@@ -25,10 +25,19 @@ func _on_main_menu_button_button_down():
 
 
 func _on_save_button_down():
+	# open file
 	var saveFile = FileAccess.open("res://Data/Save.data", FileAccess.WRITE)
 	var saveData = {}
+	
+	#save level and location
 	saveData["general"] = {}
-	saveData["general"]["level"] = str(get_tree().get_current_scene().get_name())
+	saveData["general"]["level"] = str(get_tree().current_scene.name)
+	var locationFile = FileAccess.open("res://Data/Location.data", FileAccess.READ)
+	saveData["general"]["location"] = locationFile.get_var()
+	locationFile.close()
+	
+	for node in get_tree().get_nodes_in_group("saveGroup"):
+		saveData[node.name] = node.save()
 	saveFile.store_var(saveData)
 	saveFile.close()
 	print(saveData["general"]["level"])

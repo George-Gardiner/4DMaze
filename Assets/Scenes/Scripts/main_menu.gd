@@ -27,5 +27,7 @@ func _on_load_button_down():
 		var saveFile = FileAccess.open("res://Data/Save.data", FileAccess.READ)
 		var saveData = saveFile.get_var()
 		saveFile.close()
-		print("res://Assets/Scenes/Levels/"+str(saveData["general"]["level"])+".tscn")
+		var locationFile = FileAccess.open("res://Data/Location.data", FileAccess.READ)
+		locationFile.store_var(saveData["general"]["location"])
+		locationFile.close()
 		get_tree().change_scene_to_file("res://Assets/Scenes/Levels/"+str(saveData["general"]["level"])+".tscn")
