@@ -67,7 +67,3 @@ text = "Horizontal Input Toggle
 [connection signal="button_down" from="MarginContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_button_down"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/VerticalInvert" to="." method="_on_vertical_invert_button_down"]
-[connection signal="button_up" from="MarginContainer/VBoxContainer/VerticalInvert" to="." method="_on_vertical_invert_button_up"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/HorizontalInvert" to="." method="_on_horizontal_invert_button_down"]
-[connection signal="button_up" from="MarginContainer/VBoxContainer/HorizontalInvert" to="." method="_on_horizontal_invert_button_up"]

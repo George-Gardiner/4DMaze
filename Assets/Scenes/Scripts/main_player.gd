@@ -31,6 +31,14 @@ func togglePauseMenu():
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		if $PauseMenu/MarginContainer/VBoxContainer/VerticalInvert.button_pressed:
+			turnSpeedY = abs(turnSpeedY)
+		else:
+			turnSpeedY = abs(turnSpeedY)*-1
+		if $PauseMenu/MarginContainer/VBoxContainer/HorizontalInvert.button_pressed:
+			turnSpeedX = abs(turnSpeedX)
+		else:
+			turnSpeedX = abs(turnSpeedX)*-1
 		rotate_y(deg_to_rad(event.get_relative().x*turnSpeedX))
 		if CameraController.rotation_degrees[0] + event.get_relative().y*turnSpeedY >=90:
 			CameraController.rotation_degrees[0] = 90
@@ -62,6 +70,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
+	# avoid camera noclipping
 	if (len($CameraController/CameraArea.get_overlapping_bodies()) > 1):
 		$CameraController/CameraArea/Camera.position.z = -3
 	else:
@@ -73,7 +82,7 @@ func _physics_process(delta):
 func save():
 	return {
 		"position": self.position,
-		"rotation":self.rotation
+		"rotation":self.rotation,
 	}
 	
 	
