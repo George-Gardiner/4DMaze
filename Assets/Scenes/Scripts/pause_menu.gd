@@ -41,3 +41,15 @@ func _on_save_button_down():
 	saveFile.store_var(saveData)
 	saveFile.close()
 	print(saveData["general"]["level"])
+
+
+func save():
+	return {
+		"horizontalState": $MarginContainer/VBoxContainer/HorizontalInvert.button_pressed,
+		"verticalState": $MarginContainer/VBoxContainer/VerticalInvert.button_pressed
+	}
+
+
+func loadObject(data):
+	$MarginContainer/VBoxContainer/VerticalInvert.button_pressed = data["verticalState"]
+	$MarginContainer/VBoxContainer/HorizontalInvert.button_pressed = data["horizontalState"]

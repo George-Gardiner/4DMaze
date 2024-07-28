@@ -82,10 +82,12 @@ func _physics_process(delta):
 func save():
 	return {
 		"position": self.position,
-		"rotation":self.rotation,
+		"rotation": self.rotation,
+		"pauseMenu": $PauseMenu.save()
 	}
 	
 	
 func loadObject(data):
 	self.position = data["position"]
 	self.rotation = data["rotation"]
+	$PauseMenu.loadObject(data["pauseMenu"])
