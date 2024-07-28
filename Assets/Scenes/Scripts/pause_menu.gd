@@ -41,3 +41,20 @@ func _on_save_button_down():
 	saveFile.store_var(saveData)
 	saveFile.close()
 	print(saveData["general"]["level"])
+
+
+# code for toggle invert buttons
+func _on_vertical_invert_button_down():
+	get_tree().MainPlayer.turnSpeedY = abs(get_tree().MainPlayer.turnSpeedY)
+
+
+func _on_vertical_invert_button_up():
+	get_tree().MainPlayer.turnSpeedY = abs(get_tree().MainPlayer.turnSpeedY)*-1
+
+
+func _on_horizontal_invert_button_down():
+	get_tree().MainPlayer.turnSpeedX = abs(get_tree().MainPlayer.turnSpeedX)
+
+
+func _on_horizontal_invert_button_up():
+	get_tree().MainPlayer.turnSpeedX = abs(get_tree().MainPlayer.turnSpeedX)*-1
