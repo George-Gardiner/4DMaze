@@ -11,13 +11,7 @@ func _ready():
 	portals[1].exit = "res://Assets/Scenes/Levels/level_1.tscn"
 	portals[1].active = true
 	portals[1].exitLocation = 1
-	
-	# teleport player
-	var file = FileAccess.open("res://Data/Location.data", FileAccess.READ)
-	location = file.get_var()
-	file.close()
-	if location != null:
-		get_node("MainPlayer").position = get_node("Location"+str(location)).position
+	commonReady()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

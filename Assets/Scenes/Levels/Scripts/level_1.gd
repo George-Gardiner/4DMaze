@@ -9,3 +9,4 @@ func _ready():
 	portals[0].exit = "res://Assets/Scenes/Levels/level_2.tscn"
 	portals[0].active = true
 	portals[0].exitLocation = 1
+	commonReady()
